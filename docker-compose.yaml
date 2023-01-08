@@ -16,7 +16,7 @@ services:
     restart: always   
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - C:/Users/sagad/Desktop/Glue-pytest-Medium/:/home/glue_user/workspace/jupyter_workspace/
+      - C:/Users/sagad/Desktop/Glue-pytest-Medium/:/home/glue_user/workspace/jupyter_workspace/ # Change First location with your local Directory where the code is cloned
   postgres:
     container_name: postgres
     build: 
