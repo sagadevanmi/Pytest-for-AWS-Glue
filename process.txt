@@ -1,0 +1,28 @@
+From config.yaml read configuration details like:
+    1. Secret name
+    2. List of tables which need to be processed 
+    3. S3 bucket name
+Retrieve secret from Secrets Manager
+Loop over list of tables
+    if active_flag is set to True
+        Read from postgres instance using spark.read() with schema which is stored in S3 bucket
+        if read was successful
+            Write to S3 in specific folder using spark.write()
+    else
+        Skip processing for this table
+
+
+**We are assuming that Table DDLs won't be changing and hence we are creating schema files(.yaml) 
+which can be used for reading from rdbms and writing to S3 using spark**
+
+**All schema files are stored in the S3 bucket under a common prefix(schema/postgres/)**
+
+**All tables data will be stored in the S3 bucket under a common prefix(landing/postgres/)**
+
+Process for pytest
+requirements:
+    1. S3 needs to be mocked -> can be done using moto
+    2. Secrets Manager needs to be mocked -> can be done using moto
+    3. We need a Postgres instance locally (To act like a RDS instance) -> can be done using postgres docker image
+    4. Postgres instance should have all the required tables created before running the tests -> can be done using conftest.py
+    5. Spark Context, Session variables need to be configured so that mock S3 service is accessible to them

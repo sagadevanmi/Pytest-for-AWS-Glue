@@ -1,46 +1,43 @@
-C:.
-│   architecture-on-aws.png
-│   definitions.py
-│   docker-compose.yaml
-│   main.py
-│   pg_hba.conf
-│   requirements.txt
+glue:.
+│   architecture-on-aws.png     -> Architecture diagram
+│   definitions.py              -> Gives path of root directory
+│   docker-compose.yaml         -> Docker compose file
+│   main.py                     -> Glue script
+│   pg_hba.conf                 -> Postgres client authentication file
+│   requirements.txt            -> Required python libraries
 │   __init__.py
 │
-├───dockerfiles
+├───dockerfiles                 -> Directory which contains Dockerfile for both containers
 │   ├───awsglue
-│   │       Dockerfile
+│   │       Dockerfile          
 │   │
 │   └───postgres
 │           Dockerfile
 │
-├───input
+├───input                       -> Directory which has files which need to be present in S3 before running the job
 │   ├───config
-│   │       config.yaml
+│   │       config.yaml         -> Glue job config file
 │   │
-│   └───schema
+│   └───schema                  -> Contains schema files for each table
 │           Course.yaml
 │           Dummy.yaml
 │           Professor.yaml
 │           Student.yaml
 │
-├───tests
-│   │   conftest.py
+├───tests                       -> Directory which contains all files related to pytests
+│   │   conftest.py             -> File which gets executed first when pytest command is run
 │   │   __init__.py
 │   │
-│   ├───e2e
-│   │       test_main.py
+│   ├───e2e                     -> E2E test case directory
+│   │       test_main.py        -> File which contains E2E test case
 │   │       __init__.py
 │   │
-│   ├───output
+│   ├───output                  -> Directory in which csv files from mock S3 location get downloaded
 │   │   └───2023
 │   │       └───01
 │   │           ├───01
 │   │           │   ├───14
 │   │           │   │       part-00000-7dc8e1c3-73db-4c2e-8f46-8f945f257da4-c000.csv
-│   │           │   │
-│   │           │   ├───16
-│   │           │   │       part-00000-ffcfc2e7-b0b1-4af1-bc09-ba13a68f5964-c000.csv
 │   │           │   │
 │   │           │   └───17
 │   │           │           part-00000-3d26b96e-0fad-4d5c-92a8-ae6dda067ba2-c000.csv
@@ -50,9 +47,9 @@ C:.
 │   │                       part-00000-fd2c5523-82d6-42b9-814a-8019f63a0f7d-c000.csv
 │   │
 │   ├───sqlscripts
-│   │       postgres_ddl.sql
+│   │       postgres_ddl.sql    -> Postgres initialization script
 │   │
-│   └───utils
+│   └───utils                   -> Unit test cases directory
 │           test_date_utils.py
 │           test_file_loader.py
 │           test_rdbms_operations.py
@@ -60,8 +57,8 @@ C:.
 │           test_secret_manager.py
 │           __init__.py
 │
-└───utils
-        date_utils.py
+└───utils                       -> Helper files keeping Single Responsibility principle in mind
+        date_utils.py           
         file_loader.py
         rdbms_operations.py
         s3_operations.py
