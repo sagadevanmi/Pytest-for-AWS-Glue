@@ -1,4 +1,5 @@
 C:.
+│   architecture-on-aws.png
 │   definitions.py
 │   docker-compose.yaml
 │   main.py
