@@ -1,0 +1,4 @@
+Student:
+- Version: '1'
+  Schema: StructType([StructField('studentID',IntegerType(),False),StructField('firstname',StringType(),False),StructField('lastname',StringType(),True),StructField('address',StringType(),False),StructField('city',StringType(),False),StructField('state',StringType(),True),StructField('courseID',IntegerType(),False)])
+  SrcColumnList: studentID,firstname,lastname,address,city,state,courseID

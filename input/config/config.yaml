@@ -1,0 +1,15 @@
+Bucket_Name: sd-pytest-bucket
+Secrets_Manager:
+  region_name: us-west-2
+  source_secret_name: source_secret
+Schema_Prefix: schema/postgres/
+Landing_Prefix: landing/postgres/
+Table_List:
+  Professor:
+    active_flag: F
+  Course:
+    active_flag: F
+  Student:
+    active_flag: T
+  Dummy:
+    active_flag: F

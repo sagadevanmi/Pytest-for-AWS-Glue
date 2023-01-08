@@ -1,0 +1,4 @@
+Professor:
+- Version: '1'
+  Schema: StructType([StructField('professorID',IntegerType(),False),StructField('firstname',StringType(),False),StructField('lastname',StringType(),True),StructField('experience',IntegerType(),True)])
+  SrcColumnList: professorID,firstname,lastname,experience

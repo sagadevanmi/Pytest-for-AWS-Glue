@@ -1,0 +1,68 @@
+C:.
+│   definitions.py
+│   docker-compose.yaml
+│   main.py
+│   pg_hba.conf
+│   requirements.txt
+│   __init__.py
+│
+├───dockerfiles
+│   ├───awsglue
+│   │       Dockerfile
+│   │
+│   └───postgres
+│           Dockerfile
+│
+├───input
+│   ├───config
+│   │       config.yaml
+│   │
+│   └───schema
+│           Course.yaml
+│           Dummy.yaml
+│           Professor.yaml
+│           Student.yaml
+│
+├───tests
+│   │   conftest.py
+│   │   __init__.py
+│   │
+│   ├───e2e
+│   │       test_main.py
+│   │       __init__.py
+│   │
+│   ├───output
+│   │   └───2023
+│   │       └───01
+│   │           ├───01
+│   │           │   ├───14
+│   │           │   │       part-00000-7dc8e1c3-73db-4c2e-8f46-8f945f257da4-c000.csv
+│   │           │   │
+│   │           │   ├───16
+│   │           │   │       part-00000-ffcfc2e7-b0b1-4af1-bc09-ba13a68f5964-c000.csv
+│   │           │   │
+│   │           │   └───17
+│   │           │           part-00000-3d26b96e-0fad-4d5c-92a8-ae6dda067ba2-c000.csv
+│   │           │
+│   │           └───08
+│   │               └───13
+│   │                       part-00000-fd2c5523-82d6-42b9-814a-8019f63a0f7d-c000.csv
+│   │
+│   ├───sqlscripts
+│   │       postgres_ddl.sql
+│   │
+│   └───utils
+│           test_date_utils.py
+│           test_file_loader.py
+│           test_rdbms_operations.py
+│           test_s3_operations.py
+│           test_secret_manager.py
+│           __init__.py
+│
+└───utils
+        date_utils.py
+        file_loader.py
+        rdbms_operations.py
+        s3_operations.py
+        secret_manager_operations.py
+        __init__.py

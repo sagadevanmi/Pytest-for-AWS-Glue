@@ -1,0 +1,4 @@
+Dummy:
+- Version: '1'
+  Schema: StructType([StructField('dummyID',IntegerType(),False),StructField('dummyname',StringType(),False)])
+  SrcColumnList: dummyID,dummyname

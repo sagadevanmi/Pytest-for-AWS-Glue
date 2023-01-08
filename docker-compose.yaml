@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  glue:
+    build: 
+      context: ./
+      dockerfile: ./dockerfiles/awsglue/Dockerfile
+    command: /home/glue_user/jupyter/jupyter_start.sh
+    user: glue_user
+    container_name: sd_glue_pytest
+    privileged: true
+    ports:
+      - '4041:4041'
+      - '18090:18090'
+      - '8999:8999'
+      - '8889:8889'
+    restart: always   
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - C:/Users/sagad/Desktop/Glue-pytest-Medium/:/home/glue_user/workspace/jupyter_workspace/
+  postgres:
+    container_name: postgres
+    build: 
+      context: ./
+      dockerfile: ./dockerfiles/postgres/Dockerfile
+    ports:
+     - "5440:5440"
+    restart: always
+    depends_on:
+     - glue

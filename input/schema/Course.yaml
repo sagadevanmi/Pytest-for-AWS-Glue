@@ -1,0 +1,4 @@
+Course:
+- Version: '1'
+  Schema: StructType([StructField('courseID',IntegerType(),False),StructField('coursename',StringType(),False),StructField('duration',IntegerType(),False)])
+  SrcColumnList: courseID,coursename,duration
