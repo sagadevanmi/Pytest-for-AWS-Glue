@@ -13,7 +13,7 @@ docker restart postgres
 ```
 # Attach VS Code to the running container sd_glue_pytest
 # Run E2E test case
-pytest -o log_cli=TRUE --log-cli-level=INFO tests/e2e/test_main.py
+`pytest -o log_cli=TRUE --log-cli-level=INFO tests/e2e/test_main.py`
 
 # Run all test cases
-pytest -o log_cli=TRUE --log-cli-level=INFO tests/
+`pytest -o log_cli=TRUE --log-cli-level=INFO tests/`
